@@ -1,0 +1,13 @@
+Our AI-Powered Smart Campus Companion is an intelligent assistant designed to provide instant and accurate campus-related information to students, faculty, and visitors.
+The mission is to simplify access to academic, administrative, and event updates through a conversational AI interface.
+It leverages Retrieval-Augmented Generation (RAG) to fetch real-time data from multiple campus sources.
+By integrating structured and unstructured data, it ensures reliable and context-aware responses.
+The system operates within the Education Technology (EdTech) domain.
+Its primary goal is to enhance campus communication and digital accessibility.
+The project uses LangChain’s RAG module to combine large language models with external knowledge bases.
+The LangChain AgentExecutor enables dynamic tool usage and intelligent task handling.
+For advanced workflows, LangGraph can be integrated to manage multi-step reasoning and decision flows.
+The assistant supports queries related to schedules, departments, events, admissions, and campus facilities.
+It improves user experience by reducing dependency on manual information desks.
+The platform can be deployed as a web or mobile chatbot for easy access.
+Overall, the Smart Campus Companion creates a smarter, more connected campus ecosystem.
