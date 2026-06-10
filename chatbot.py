@@ -8,7 +8,6 @@ from scraper import get_college_content
 
 _CLIENT = None
 
-
 def init_groq():
     """Initialize the Groq client using the API key from environment."""
     global _CLIENT  # pylint: disable=global-statement
