@@ -66,7 +66,7 @@ def build_context(question):
             f"Tags: {', '.join(data['tags'])}\n"
         )
         if scraped:
-            part += f"Website Content: {scraped[:300]}\n"
+            part += f"Website Content: {scraped[:1000]}\n"
         context_parts.append(part)
         colleges_used.append(name)
 
@@ -86,16 +86,21 @@ def ask(question, history):
         history_text += f"User: {h['user']}\nAssistant: {h['assistant']}\n\n"
 
     prompt = (
-        "You are CampusGuide AI, an expert assistant for students seeking "
-        "information about colleges in Hyderabad, Telangana, India.\n\n"
-        "Use the college information below to answer questions accurately.\n"
-        "If exact information is not available, direct them to the official website.\n"
-        "Use Indian English. Be familiar with EAMCET, TSEAMCET, CBCS, fee reimbursement.\n"
-        "Keep answers clear and well-structured.\n\n"
-        f"COLLEGE DATABASE:\n{context}\n\n"
-        f"CONVERSATION HISTORY:\n{history_text}\n"
-        f"USER QUESTION: {question}\n\nANSWER:"
-    )
+    "You are CampusGuide AI, an expert educational counselor for Hyderabad colleges.\n\n"
+
+    "Answer confidently and naturally.\n"
+    "Use the college information provided in the database.\n"
+    "Do not repeatedly say 'information is not available in the database'.\n"
+    "If some details are missing, provide a helpful overview based on the college profile.\n"
+    "Only recommend visiting the official website when very specific information is requested.\n"
+    "Keep answers student-friendly, informative and professional.\n"
+    "Use bullet points whenever appropriate.\n"
+    "Mention courses, facilities, placements and admissions whenever relevant.\n\n"
+
+    f"COLLEGE DATABASE:\n{context}\n\n"
+    f"CONVERSATION HISTORY:\n{history_text}\n"
+    f"USER QUESTION: {question}\n\nANSWER:"
+)
 
     try:
         chat = _CLIENT.chat.completions.create(
