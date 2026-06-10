@@ -1,153 +1,250 @@
-# 🎓 CampusGuide Hyderabad — AI Campus Info Chatbot
+# 🎓 CampusGuide Hyderabad
 
-An AI-powered chatbot for answering questions about colleges in Hyderabad, Telangana. Built for the Capabl Track A project.
+> An AI-Powered College Information Assistant for Hyderabad Students
+
+CampusGuide Hyderabad is an intelligent chatbot that helps students explore colleges in Hyderabad through natural language conversations. Instead of browsing multiple websites, students can simply ask questions about admissions, courses, fees, placements, facilities, eligibility criteria, campus life, and more.
+
+🌐 **Live Demo:** https://powerpuffgirls-8eidqrtu3jvpead88exr9d.streamlit.app
+
+---
+
+## 🚀 Problem Statement
+
+Students often spend hours searching through multiple college websites to gather information about admissions, courses, fee structures, placements, hostel facilities, and eligibility criteria.
+
+Information is scattered across different websites, making comparison and decision-making difficult.
+
+CampusGuide Hyderabad solves this problem by providing a single AI-powered platform that answers college-related queries instantly.
+
+---
+
+## ✨ Key Features
+
+### 🤖 AI-Powered Conversations
+- Natural language question answering
+- Context-aware responses
+- Student-friendly explanations
+
+### 🏛️ Hyderabad College Database
+- Information about 30+ colleges and universities
+- Engineering, Management, Law, Science and Degree colleges
+- Admissions and eligibility details
+
+### 📚 Academic Information
+- Courses offered
+- Departments and specializations
+- Affiliation details
+- Program information
+
+### 💼 Career & Placement Insights
+- Placement-related information
+- Industry-focused programs
+- Emerging technology specializations
+
+### 🌐 Smart Information Retrieval
+- College database matching
+- Website content extraction
+- Context-based responses
+
+### 📱 Modern User Interface
+- Responsive Streamlit UI
+- Interactive chat interface
+- College explorer sidebar
+- Session statistics
 
 ---
 
 ## 🏛️ Colleges Covered
 
-| College | Location | Type |
-|--------|----------|------|
-| JNTU Hyderabad | Kukatpally | University |
-| Osmania University | Amberpet | University |
-| CBIT | Gandipet | Engineering |
-| IIIT Hyderabad | Gachibowli | Deemed University |
-| NIT Warangal | Warangal | NIT |
-| ISB Hyderabad | Gachibowli | Business School |
-| NALSAR University | Shameerpet | Law University |
-| University of Hyderabad | Gachibowli | Central University |
-| VNR VJIET | Bachupally | Engineering |
-| Vasavi College | Ibrahimbagh | Engineering |
-| Nizam College | Basheerbagh | Arts & Science |
-| MVSR Engineering | Nadergul | Engineering |
-| Muffakham Jah | Banjara Hills | Engineering |
-| VJIT | Bachupally | Engineering |
-| St. Francis College | Begumpet | Women's College |
+### Universities
+- JNTU Hyderabad
+- Osmania University
+- University of Hyderabad
+- Mahindra University
+- Anurag University
+- Woxsen University
+- ICFAI University
+- KL University Hyderabad
+
+### Engineering Colleges
+- CBIT
+- GNITS
+- GRIET
+- CVR College of Engineering
+- VNR VJIET
+- MGIT
+- MJCET
+- KMIT
+- SNIST
+- IARE
+- CMRCET
+- CMRTC
+- Vardhaman College of Engineering
+- ACE Engineering College
+- TKR College of Engineering
+- BVRIT
+- BVRIT Women's College
+- Lords Institute of Engineering and Technology
+- Guru Nanak Institutions
+- Malla Reddy Engineering College
+
+### Specialized Institutions
+- IIIT Hyderabad
+- NALSAR University
+- ISB Hyderabad
+- NIT Warangal
+- St. Ann's College
+- Methodist College
+- Stanley College
+- Aurora University
 
 ---
 
-## ⚙️ Tech Stack
+## 🛠️ Tech Stack
 
-- **Frontend:** Streamlit with custom CSS
-- **Backend:** Python
-- **LLM:** Groq API (free) — `llama-3.3-70b-versatile`
-- **Scraping:** BeautifulSoup + requests
-- **Data:** Scraped live from official college websites + local cache
+### Frontend
+- Streamlit
+- HTML/CSS
+- Custom UI Components
+
+### Backend
+- Python
+
+### AI & LLM
+- Groq API
+- Llama 3.3 70B Versatile
+
+### Data Collection
+- BeautifulSoup
+- Requests
+- LXML
+
+### Configuration
+- Python Dotenv
+
+### Deployment
+- Streamlit Community Cloud
 
 ---
 
-## 🚀 Setup Instructions
+## 📂 Project Structure
 
-### Step 1 — Clone & enter folder
-```bash
-git clone <your-repo-url>
-cd campus_chatbot
+```text
+campus_chatbot/
+│
+├── app.py
+├── chatbot.py
+├── scraper.py
+├── colleges_config.py
+├── requirements.txt
+├── README.md
+├── .gitignore
+│
+└── data/
 ```
 
-### Step 2 — Create virtual environment
+---
+
+## ⚙️ Installation
+
+### Clone Repository
+
+```bash
+git clone https://github.com/pendyalasharanya/Powerpuffgirls.git
+cd Powerpuffgirls
+```
+
+### Create Virtual Environment
+
 ```bash
 python -m venv venv
+```
 
-# Windows:
+### Activate Environment
+
+Windows:
+
+```bash
 venv\Scripts\activate
+```
 
-# Mac/Linux:
+Linux/Mac:
+
+```bash
 source venv/bin/activate
 ```
 
-### Step 3 — Install dependencies
+### Install Dependencies
+
 ```bash
 python -m pip install -r requirements.txt
-python -m pip install groq
 ```
 
-### Step 4 — Get a free Groq API key
-1. Go to https://console.groq.com
-2. Sign up for free with your Gmail
-3. Click **API Keys** → **Create API Key**
-4. Copy the key
+### Configure Environment Variables
 
-### Step 5 — Configure API key
-Create a `.env` file in the project folder and add:
-```
-GROQ_API_KEY=gsk_your_key_here
+Create a `.env` file:
+
+```env
+GROQ_API_KEY=your_groq_api_key
 ```
 
-### Step 6 — Run the app
+### Run Application
+
 ```bash
-python -m streamlit run app.py
-```
-
-The app opens at **http://localhost:8501**
-
----
-
-## 📖 Usage Guide
-
-1. Open the app at http://localhost:8501
-2. Ask questions in the chat box. Examples:
-   - *"What are the B.Tech fees at CBIT?"*
-   - *"How do I apply to JNTU Hyderabad?"*
-   - *"Tell me about placements at Vasavi College"*
-   - *"Which college is best for CSE in Hyderabad?"*
-   - *"What is EAMCET and how does it work?"*
-
----
-
-## 📁 Project Structure
-
-```
-campus_chatbot/
-├── app.py                  # Main Streamlit UI
-├── chatbot.py              # Groq LLM chatbot logic
-├── scraper.py              # BeautifulSoup web scraper
-├── colleges_config.py      # College URLs and metadata
-├── requirements.txt        # Python dependencies
-├── .env                    # Your API key (don't commit!)
-├── .gitignore              # Ignores .env, venv, cache
-└── data/
-    └── scraped_cache.json  # Cached college website content
+streamlit run app.py
 ```
 
 ---
 
-## 🛠️ Troubleshooting
+## ☁️ Deployment
 
-| Issue | Solution |
-|-------|----------|
-| `ModuleNotFoundError: groq` | Run `python -m pip install groq` |
-| `streamlit not recognized` | Use `python -m streamlit run app.py` |
-| `GROQ_API_KEY not found` | Check your `.env` file has the key with no spaces |
-| Scraping fails for a college | Website may be down; cached data is used automatically |
-| `cannot import name 'init_gemini'` | Make sure you have the latest `app.py` from the repo |
+The application is deployed on Streamlit Community Cloud.
+
+### Live Application
+
+🔗 https://powerpuffgirls-8eidqrtu3jvpead88exr9d.streamlit.app
 
 ---
 
-## 📦 Deployment (Streamlit Cloud)
+## 🎯 Sample Questions
 
-1. Push code to GitHub (`.env` is in `.gitignore` so it won't be uploaded)
-2. Go to https://share.streamlit.io
-3. Connect your GitHub repo
-4. Go to **App settings → Secrets** and add:
-```
-GROQ_API_KEY = "gsk_your_key_here"
-```
-5. Deploy!
+Try asking:
 
----
-
-## 🎯 Assessment Checklist (Track A)
-
-- [x] GitHub repo with project structure
-- [x] Python + Streamlit + BeautifulSoup
-- [x] Web scraping for college websites
-- [x] Campus info categorization (location, fees, admissions, placements)
-- [x] Streamlit chatbot interface
-- [x] Free LLM via Groq API (no quota issues)
-- [x] Conversation memory (last 2 exchanges)
-- [x] Contact info, location, and facility details
-- [x] Deployable on Streamlit Cloud
+- What courses are offered in GNITS?
+- Tell me about CBIT placements.
+- What is the admission process for JNTUH?
+- Which college is best for CSE in Hyderabad?
+- Tell me about Mahindra University.
+- What are the fees at GRIET?
+- Compare GNITS and CBIT.
 
 ---
 
-Built as part of **Capabl Interactive Campus Info Chatbot Project — Track A**
+## 👥 Team
+
+### Powerpuffgirls
+
+- Vyshnavi Pittala
+- Team Members
+
+---
+
+## 🔮 Future Enhancements
+
+- College comparison feature
+- Scholarship recommendations
+- Placement analytics dashboard
+- Admission deadline alerts
+- Multi-city college database
+- Voice-based interaction
+- Personalized college recommendations
+
+---
+
+## 📜 License
+
+This project was developed for educational and hackathon purposes.
+
+---
+
+⭐ If you found this project useful, consider giving the repository a star.
